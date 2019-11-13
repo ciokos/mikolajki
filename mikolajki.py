@@ -1,11 +1,13 @@
 from random import shuffle
-l = ["Wojtus","Tomus","Kacpix","Gosienka","Martusia","Irenka","Olusia","Sylwusia","Adas"]
-shuffle(l)
-a = l[8]
-xd = l[:]
-xd.pop(8)
-xd = [a] + xd
-for x, y in zip(l, xd):
-    file2write = open(x + ".txt", 'w')
-    file2write.write("Kup prezencik dla: " + y)
+people = ["Wojtke", "Tomke", "Kacpix", "Martusia", "Olcia", "Sylwusia"]
+elements = ["ogień", "woda", "ziemia", "powietrze", "światło", "ciemność"]
+shuffle(people)
+shuffle(elements)
+a = people[-1]
+santas = people[:]
+santas.pop()
+santas = [a] + santas
+for x, y, z in zip(people, santas, elements):
+    file2write = open("santa_files/" + y + ".txt", 'w')
+    file2write.write("W tym roku kupujesz prezencik dla: " + x.upper() + " z motywem " + z.upper())
     file2write.close()
